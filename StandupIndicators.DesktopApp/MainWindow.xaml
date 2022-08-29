@@ -6,7 +6,28 @@
         xmlns:local="clr-namespace:StandupIndicators.DesktopApp"
         mc:Ignorable="d"
         Title="Standup Indicators" Height="1080" Width="1920">
-    <Grid>
-        
-    </Grid>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="KPI" Click="MeetingClick"/>
+            <MenuItem Header="Ustawienia">
+                <MenuItem Header="Zmień lokalizację bazy danych" Click="DbChangeClick"/>
+                <MenuItem Header="Ustawienia aplikacji" Click="AppSettingsClick"/>
+            </MenuItem>
+        </Menu>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <Grid Margin="5">
+                <ContentControl Name="Content"/>
+            </Grid>
+            <DockPanel Grid.Row="2">
+                <Label DockPanel.Dock="Right" Content="Copyright: Sebastian Krupa (sebkrupa@outlook.com)"/>
+            </DockPanel>
+        </Grid>
+    </DockPanel>
 </Window>

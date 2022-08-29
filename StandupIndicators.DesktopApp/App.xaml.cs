@@ -13,5 +13,11 @@ namespace StandupIndicators.DesktopApp
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            var settings = new Settings();
+            var startup = new ViewModel.DbAssignment();
+            startup.AssignDbPath(settings.DbPath);
+        }
     }
 }

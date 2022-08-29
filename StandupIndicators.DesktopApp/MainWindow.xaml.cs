@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StandupIndicators.DesktopApp.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,22 @@ namespace StandupIndicators.DesktopApp
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void DbChangeClick(object sender, RoutedEventArgs e)
+        {
+            DbAssignment db = new DbAssignment();
+            db.AssignDbPath();
+        }
+
+        private void AppSettingsClick(object sender, RoutedEventArgs e)
+        {
+            Content.Content = new View.Settings_Departament();
+        }
+
+        private void MeetingClick(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
